@@ -3,7 +3,6 @@ from confluent_kafka.admin import AdminClient
 from producer_utils import create_topic, consume_wikimedia_events
 from wiki_event_handler import WikimediaEventHandler
 import logging
-import aiohttp
 import asyncio
 
 logging.basicConfig(level=logging.INFO, filename="wiki_producer.log", filemode="w")

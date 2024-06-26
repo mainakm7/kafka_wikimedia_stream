@@ -1,10 +1,23 @@
 from confluent_kafka import Producer, KafkaException
-from producer_utils import delivery_report
 import logging
 import asyncio
 
 logging.basicConfig(level=logging.INFO, filename="wiki_producer.log", filemode="w")
 log = logging.getLogger(name=__name__)
+
+
+def delivery_report(err, msg):
+    if err:
+        log.error(f"Failed to deliver message: {err}")
+    else:
+        log.info(
+            f"Message metadata:\n"
+            f"Topic: {msg.topic()}\n"
+            f"Partition: [{msg.partition()}] \n"
+            f"Offset: {msg.offset()} \n"
+            f"Timestamp: {msg.timestamp()} \n"
+            f"Msg Key: {msg.key().decode('utf-8') if msg.key() else 'None'}"
+        )
 
 class WikimediaEventHandler:
     def __init__(self, producer: Producer, topic):
