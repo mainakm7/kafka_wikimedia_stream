@@ -9,7 +9,7 @@ log = logging.getLogger(name=__name__)
 
 
 
-def create_topic(admin_client: AdminClient, topic_name, num_partitions=3, replication_factor=1):
+def create_topic(admin_client: AdminClient, topic_name: str, num_partitions=3, replication_factor=1):
     """Create a topic if it doesn't exist"""
     topic_list = admin_client.list_topics(timeout=10).topics
     if topic_name in topic_list:
@@ -27,7 +27,7 @@ def create_topic(admin_client: AdminClient, topic_name, num_partitions=3, replic
                 raise
 
 
-async def consume_wikimedia_events(url, event_handler: WikimediaEventHandler):
+async def consume_wikimedia_events(url: str, event_handler: WikimediaEventHandler):
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
             try:
