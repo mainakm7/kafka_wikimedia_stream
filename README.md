@@ -27,6 +27,8 @@ This project demonstrates how to consume events from the Wikimedia recent change
     Ensure Docker Engine and Docker Compose are installed and running.
     run: `docker-compose up -d`
 
+    Disclaimer: Using the Conduktor platform UI to monitor kafka topics. Present in docker compose file
+
 ## Configuration
 
 - Update bootstrap.servers in main.py to localhost:9092 for Kafka connection.
