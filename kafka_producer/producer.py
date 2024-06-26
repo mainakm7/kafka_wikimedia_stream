@@ -67,6 +67,7 @@ async def consume_wikimedia_events(url, event_handler):
             except KeyboardInterrupt as e:
                 log.error(f"Stream break: {e}")
 
+
 def main():
     conf = {
         "bootstrap.servers": "127.0.0.1:9092",
