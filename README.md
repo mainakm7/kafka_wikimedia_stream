@@ -1,4 +1,4 @@
-# Kafka-wikimedia-stream
+# Kafka-wikimedia-stream (in development)
 
 This project demonstrates how to consume events from the Wikimedia recent changes stream using Python, `aiohttp` for asynchronous HTTP requests, and `confluent-kafka` for producing messages to Kafka.
 
