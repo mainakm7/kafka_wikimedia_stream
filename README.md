@@ -14,19 +14,18 @@ This project demonstrates how to consume events from the Wikimedia recent change
 
 1. Clone the repository:
 
-git clone https://github.com/mainakm7/kafka_wikimedia_stream.git
+    `git clone https://github.com/mainakm7/kafka_wikimedia_stream.git`
 
 
 2. Install dependencies:
 
-pip install -r requirements.txt
+    `pip install -r requirements.txt`
 
 
 3. Set up Kafka, Zookeeper, and PostgreSQL using Docker Compose:
 
-Ensure Docker Engine and Docker Compose are installed and running.
-
-```bash docker-compose up -d
+    Ensure Docker Engine and Docker Compose are installed and running.
+    run: `docker-compose up -d`
 
 ## Configuration
 
