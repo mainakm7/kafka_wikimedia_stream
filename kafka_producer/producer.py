@@ -58,11 +58,14 @@ class WikimediaEventHandler:
 async def consume_wikimedia_events(url, event_handler):
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
-            while True:
-                line = await response.content.readline()
-                if not line:
-                    break
-                await event_handler.on_message(line.decode('utf-8').strip())
+            try:
+                while True:
+                    line = await response.content.readline()
+                    if not line:
+                        break
+                    await event_handler.on_message(line.decode('utf-8').strip())
+            except KeyboardInterrupt as e:
+                log.error(f"Stream break: {e}")
 
 def main():
     conf = {
