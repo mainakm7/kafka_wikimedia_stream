@@ -27,9 +27,8 @@ def main():
     producer = Producer(conf)
     event_handler = WikimediaEventHandler(producer, topic_name)
 
-    loop = asyncio.get_event_loop()
     try:
-        loop.run_until_complete(consume_wikimedia_events(url, event_handler))
+        asyncio.run(consume_wikimedia_events(url, event_handler))
     except Exception as e:
         log.error(f"Error consuming events: {e}")
     finally:
