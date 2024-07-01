@@ -6,7 +6,7 @@ This project demonstrates how to consume events from the Wikimedia recent change
 
 - Python 3.11.5
 - `aiohttp` library (`pip install aiohttp`) 
-- Alternatively can also use httpx library for asynchronous stream get request
+- Alternatively can also use httpx library for asynchronous stream get request (`pip install httpx`) 
 - `confluent-kafka` library (`pip install confluent-kafka`)
 - Docker Engine
 - Docker Compose
