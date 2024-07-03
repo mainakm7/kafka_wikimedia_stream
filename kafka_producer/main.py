@@ -16,7 +16,8 @@ def main():
         "acks": "all",
         "enable.idempotence": True,
         "delivery.timeout.ms": 120000,
-        "retries": sys.maxsize
+        "retries": sys.maxsize,
+        "max.in.flight.requests": 5
     }
 
     admin_client = AdminClient(conf)
