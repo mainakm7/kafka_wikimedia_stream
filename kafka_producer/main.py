@@ -18,7 +18,7 @@ def main():
         "delivery.timeout.ms": 120000,
         "retries": sys.maxsize,
         "max.in.flight.requests": 5,
-        "compression.codec": 'lz4',
+        "compression.codec": 'snappy',
         "linger.ms": 20,
         "batch.size": 32*1024
     }
