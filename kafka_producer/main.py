@@ -12,7 +12,8 @@ def main():
     conf = {
         "bootstrap.servers": "127.0.0.1:9092",
         "client.id": "python-producer",
-        "acks": "all"
+        "acks": "all",
+        "enable.idempotence": True
     }
 
     admin_client = AdminClient(conf)
