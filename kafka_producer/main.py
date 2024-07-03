@@ -4,6 +4,7 @@ from producer_utils import create_topic, consume_wikimedia_events
 from wiki_event_handler import WikimediaEventHandler
 import logging
 import asyncio
+import sys
 
 logging.basicConfig(level=logging.INFO, filename="wiki_producer.log", filemode="w")
 log = logging.getLogger(name=__name__)
@@ -14,7 +15,8 @@ def main():
         "client.id": "python-producer",
         "acks": "all",
         "enable.idempotence": True,
-        'delivery.timeout.ms': 120000
+        "delivery.timeout.ms": 120000,
+        "retries": sys.maxsize
     }
 
     admin_client = AdminClient(conf)
