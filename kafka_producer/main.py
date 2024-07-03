@@ -13,7 +13,8 @@ def main():
         "bootstrap.servers": "127.0.0.1:9092",
         "client.id": "python-producer",
         "acks": "all",
-        "enable.idempotence": True
+        "enable.idempotence": True,
+        'delivery.timeout.ms': 120000
     }
 
     admin_client = AdminClient(conf)
