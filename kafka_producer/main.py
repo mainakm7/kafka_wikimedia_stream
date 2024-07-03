@@ -11,7 +11,8 @@ log = logging.getLogger(name=__name__)
 def main():
     conf = {
         "bootstrap.servers": "127.0.0.1:9092",
-        "client.id": "python-producer"
+        "client.id": "python-producer",
+        "acks": "all"
     }
 
     admin_client = AdminClient(conf)
