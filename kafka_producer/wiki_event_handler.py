@@ -1,4 +1,4 @@
-from confluent_kafka import Producer, KafkaException
+from confluent_kafka import Producer, KafkaException, CompressionType
 import logging
 import asyncio
 
@@ -30,7 +30,7 @@ class WikimediaEventHandler:
     async def on_message(self, msg):
         log.info(f"Msg received: {msg}")
         try:
-            self.producer.produce(self.topic, value=msg.encode("utf-8"), callback=delivery_report)
+            self.producer.produce(self.topic, value=msg.encode("utf-8"), compression=CompressionType.LZ4, callback=delivery_report)
             log.info(f"Msg passed {msg}")
         except KafkaException as e:
             log.error(f"Kafka exception received: {e}")

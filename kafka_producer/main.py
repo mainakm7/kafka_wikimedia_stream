@@ -17,7 +17,10 @@ def main():
         "enable.idempotence": True,
         "delivery.timeout.ms": 120000,
         "retries": sys.maxsize,
-        "max.in.flight.requests": 5
+        "max.in.flight.requests": 5,
+        "compression.codec": 'lz4',
+        "linger.ms": 20,
+        "batch.size": 32*1024
     }
 
     admin_client = AdminClient(conf)
