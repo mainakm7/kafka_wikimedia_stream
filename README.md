@@ -32,7 +32,7 @@ This project demonstrates how to consume events from the Wikimedia recent change
 
 ## Configuration
 
-- Update bootstrap.servers in main.py to localhost:9092 for Kafka connection.
+- Update bootstrap.servers in `kafka_producer/main.py` to localhost:9092 for Kafka connection.
 - Update `topic_name` in `kafka_producer/main.py` to the desired Kafka topic name.
 
 ## Usage
